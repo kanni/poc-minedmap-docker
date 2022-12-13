@@ -15,10 +15,10 @@ echo "Ensuring map data directory exists..."
 mkdir -p "${MAPDATA_DIR}"
 
 echo "Running inital map generation..."
-/usr/bin/MinedMap "${SAVEGAME_DIR}" "${MAPDATA_DIR}"
+/usr/local/bin/MinedMap "${SAVEGAME_DIR}" "${MAPDATA_DIR}"
 
 echo "Adding cronjob..."
-echo "*/5 * * * * /usr/bin/MinedMap \"${SAVEGAME_DIR}\" \"${MAPDATA_DIR}\"" > /etc/crontabs/minecraft
+echo "*/5 * * * * /usr/local/bin/MinedMap \"${SAVEGAME_DIR}\" \"${MAPDATA_DIR}\"" > /etc/crontabs/minecraft
 
 echo "Starting crond..."
 crond &
